@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M7P5"/>
+        <attribute name="authors" value="shama"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-21 04:41:18 PM"/>
+        <attribute name="created" value="c2hhbWE7REVTS1RPUC1HSFRTUVVGOzIwMjYtMTAtMjE7MDM6NTE6NDIgUE07MjkyNA=="/>
+        <attribute name="edited" value="c2hhbWE7REVTS1RPUC1HSFRTUVVGOzIwMjYtMTAtMjE7MDQ6NDE6MTggUE07MTszMDM1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="itemquantity" type="Integer" array="False" size=""/>
+            <declare name="itemprice, extendedprice" type="Real" array="False" size=""/>
+            <declare name="discountrate, discountamount" type="Real" array="False" size=""/>
+            <declare name="finaltotal, totaldiscount" type="Real" array="False" size=""/>
+            <declare name="userchoice" type="String" array="False" size=""/>
+            <declare name="totaldiscounts" type="Real" array="False" size=""/>
+            <assign variable="totaldiscounts" expression="0.0"/>
+            <output expression="&quot;Do you want to run this program? (Yes/No)&quot;" newline="True"/>
+            <input variable="userchoice"/>
+            <while expression="userchoice==&quot;yes&quot;">
+                <input variable="itemquantity"/>
+                <input variable="itemprice"/>
+                <assign variable="extendedprice" expression="itemquantity*itemprice"/>
+                <while expression="extendedprice&gt;10000.00">
+                    <assign variable="discountrate" expression="0.25"/>
+                </while>
+                <assign variable="discountrate" expression="0.10"/>
+                <assign variable="discountamount" expression="extendedprice*discountrate"/>
+                <assign variable="finaltotal" expression="extendedprice-discountamount"/>
+                <assign variable="totaldiscounts" expression="totaldiscounts+discountamount"/>
+                <output expression="&quot;Extended: $&quot; &amp; ToFixed(extendedprice, 2)" newline="True"/>
+                <output expression="&quot;Discount: $&quot; &amp; discountamount" newline="True"/>
+                <output expression="finalTotal" newline="True"/>
+                <output expression="&quot;Run again? (Yes/No)&quot;" newline="True"/>
+                <input variable="userchoice"/>
+            </while>
+            <output expression="&quot;Total Discounts Applied: $&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M7P3"/>
+        <attribute name="authors" value="shama"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-21 03:19:19 PM"/>
+        <attribute name="created" value="c2hhbWE7REVTS1RPUC1HSFRTUVVGOzIwMjYtMTAtMjE7MDM6MDE6MTEgUE07MjkxNQ=="/>
+        <attribute name="edited" value="c2hhbWE7REVTS1RPUC1HSFRTUVVGOzIwMjYtMTAtMjE7MDM6MTk6MTkgUE07MTszMDQw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="examscore1, examscore2" type="Real" array="False" size=""/>
+            <declare name="averagescore" type="Real" array="False" size=""/>
+            <declare name="userchoice" type="String" array="False" size=""/>
+            <declare name="studentcount" type="Real" array="False" size=""/>
+            <assign variable="studentcount" expression="0"/>
+            <declare name="yes" type="String" array="False" size=""/>
+            <output expression="&quot;Do you want to run this program? (Yes/No)&quot;" newline="True"/>
+            <input variable="userchoice"/>
+            <while expression="userchoice==&quot;yes&quot;">
+                <input variable="lastname"/>
+                <input variable="examscore1"/>
+                <input variable="examscore2"/>
+                <assign variable="averagescore" expression="(examscore1+examscore2)/2"/>
+                <assign variable="studentcount" expression="studentcount+1"/>
+                <output expression="lastname&amp; &quot; Average: &quot; &amp; ToFixed(averageScore, 2)" newline="True"/>
+                <output expression="&quot;Run again? (Yes/No)&quot;" newline="True"/>
+                <input variable="userchoice"/>
+            </while>
+            <output expression="&quot;Total Students: &quot; &amp; studentCount" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

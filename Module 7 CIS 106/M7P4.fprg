@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M7P4"/>
+        <attribute name="authors" value="shama"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-21 03:51:34 PM"/>
+        <attribute name="created" value="c2hhbWE7REVTS1RPUC1HSFRTUVVGOzIwMjYtMTAtMjE7MDM6MTk6MjMgUE07MjkyNw=="/>
+        <attribute name="edited" value="c2hhbWE7REVTS1RPUC1HSFRTUVVGOzIwMjYtMTAtMjE7MDM6NTE6MzQgUE07MTszMDMz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="hoursworked, payrate, grosspay" type="Real" array="False" size=""/>
+            <declare name="totalgrosspay, averagepay" type="Real" array="False" size=""/>
+            <declare name="employeecount" type="Integer" array="False" size=""/>
+            <declare name="userchoice" type="String" array="False" size=""/>
+            <assign variable="totalgrosspay" expression="0.0"/>
+            <assign variable="employeecount" expression="0"/>
+            <output expression="&quot;Do you want to run this program? (Yes/No)&quot;" newline="True"/>
+            <input variable="userchoice"/>
+            <while expression="userChoice == &quot;yes&quot;">
+                <input variable="lastname"/>
+                <input variable="hoursworked"/>
+                <input variable="payrate"/>
+                <while expression="hoursWorked &gt; 40">
+                    <assign variable="grosspay" expression="(40*payrate)+((hoursworked-40)*(payrate*1.5))"/>
+                </while>
+                <assign variable="grosspay" expression="hoursworked*payrate"/>
+                <assign variable="totalgrosspay" expression="totalgrossPay + grosspay"/>
+                <assign variable="employeecount" expression="employeecount+1"/>
+                <output expression="lastname &amp; &quot; grosspay: $&quot; &amp; ToFixed(grosspay,2)" newline="True"/>
+                <output expression="&quot;Run again? (Yes/No)&quot;" newline="True"/>
+            </while>
+            <while expression="employeeCount &gt; 0">
+                <assign variable="averagepay" expression="totalgrosspay/employeecount"/>
+            </while>
+            <output expression="&quot;No&quot;" newline="True"/>
+            <output expression="&quot;Total Gross: $&quot;" newline="True"/>
+            <output expression="&quot;Total employees: &quot;" newline="True"/>
+            <output expression="&quot;Average Pay: $&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
